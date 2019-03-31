@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\InteliMotions.Analyze.Facebook.Watson\InteliMotions.Analyze.Facebook.Watson.csproj">
+      <Project>{f332b80a-11fc-400b-937f-b9f457307b2d}</Project>
+      <Name>InteliMotions.Analyze.Facebook.Watson</Name>
+    </ProjectReference>
     <ProjectReference Include="..\InteliMotions.Analyze.Facebook\InteliMotions.Analyze.Facebook.csproj">
       <Project>{4ec47196-a5b9-4ace-ad90-f27b5da4b6cd}</Project>
       <Name>InteliMotions.Analyze.Facebook</Name>
