@@ -1,21 +1,13 @@
 ﻿using IBM.WatsonDeveloperCloud.NaturalLanguageUnderstanding.v1;
 using IBM.WatsonDeveloperCloud.NaturalLanguageUnderstanding.v1.Model;
 using IBM.WatsonDeveloperCloud.Util;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InteliMotions.Analyze.Facebook.Watson
 {
     public class Connect
     {
-
         public void Main()
         {
-
-
             //Gerando primeiro token
             TokenOptions iamAssistantTokenOptions = new TokenOptions()
             {
@@ -23,17 +15,15 @@ namespace InteliMotions.Analyze.Facebook.Watson
                 ServiceUrl = "https://gateway.watsonplatform.net/natural-language-understanding/api"
             };
 
-
             //AssistantService assistantService = new AssistantService();
             //var listWorkspacesResult = assistantService.ListWorkspaces();
-
             //_assistant = new AssistantService(iamAssistantTokenOptions, "<version-date>");
 
-            NaturalLanguageUnderstandingService _naturalLanguageUnderstandingService = new NaturalLanguageUnderstandingService(iamAssistantTokenOptions, "30 DE MAR DE 2019 - 09:11:59 PM");
+            NaturalLanguageUnderstandingService _naturalLanguageUnderstandingService = new NaturalLanguageUnderstandingService(iamAssistantTokenOptions, "2019-03-30");
             
             Parameters parameters = new Parameters()
             {
-                Text = "Oi eu sou um teste de programadores do brasil, isso quer dizer que vamos escutar musica e programar todo o conteudo.",
+                Text = "A garota é cheirosa",//positivo //"A garota é fedida" // negativo
                 Features = new Features()
                 {
                     Keywords = new KeywordsOptions()
@@ -46,8 +36,6 @@ namespace InteliMotions.Analyze.Facebook.Watson
             };
 
             var result = _naturalLanguageUnderstandingService.Analyze(parameters);
-        }
-
-        
+        }        
     }
 }
