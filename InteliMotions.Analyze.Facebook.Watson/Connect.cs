@@ -6,7 +6,7 @@ namespace InteliMotions.Analyze.Facebook.Watson
 {
     public class Connect
     {
-        public void Main()
+        public AnalysisResults Main(string message)
         {
             //Gerando primeiro token
             TokenOptions iamAssistantTokenOptions = new TokenOptions()
@@ -23,7 +23,7 @@ namespace InteliMotions.Analyze.Facebook.Watson
             
             Parameters parameters = new Parameters()
             {
-                Text = "A garota é cheirosa",//positivo //"A garota é fedida" // negativo
+                Text = message,//positivo //"A garota é fedida" // negativo
                 Features = new Features()
                 {
                     Keywords = new KeywordsOptions()
@@ -36,6 +36,10 @@ namespace InteliMotions.Analyze.Facebook.Watson
             };
 
             var result = _naturalLanguageUnderstandingService.Analyze(parameters);
+            
+            return result;
+
+            
         }        
     }
 }
