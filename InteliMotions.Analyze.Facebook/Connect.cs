@@ -1,6 +1,5 @@
-﻿using Facebook;
+﻿using InteliMotions.Analyze.Facebook.Model;
 using InteliMotions.Analyze.Facebook.Service;
-using RestSharp;
 using System.Threading.Tasks;
 
 namespace InteliMotions.Analyze.Facebook
@@ -18,7 +17,21 @@ namespace InteliMotions.Analyze.Facebook
             _ApplicationId = ApplicationId;
         }
 
-        public void GetFacebookLoginUrl()
+        public FacebookPosts GetPosts()
+        {
+            var facebookClient = new Service.FacebookClient();
+            var facebookService = new FacebookService(facebookClient);
+            
+            var getPostsTask = facebookService.GetPost(_accessToken);
+
+            Task.WaitAll(getPostsTask);
+            var posts = getPostsTask.Result;
+            
+            return posts;
+
+        }
+
+        public FacebookMessages GetCommentsPost(string postId)
         {
             var facebookClient = new Service.FacebookClient();
             var facebookService = new FacebookService(facebookClient);
@@ -29,28 +42,14 @@ namespace InteliMotions.Analyze.Facebook
             Task.WaitAll(getPostsTask);
             var posts = getPostsTask.Result;
 
-            foreach (var post in posts.Data)
-            {
-                var messageTask = facebookService.GetPostMessage(_accessToken, post.id);
-                Task.WaitAll(messageTask);
+            var messageTask = facebookService.GetPostMessage(_accessToken, postId);
+            Task.WaitAll(messageTask);
 
-                var message = messageTask.Result;
+            var messages = messageTask.Result;
 
-            }
+            return messages;
 
         }
 
-        public string GetAccessToken(string code)
-        {
-            var client = new RestClient("https://graph.facebook.com/");
-
-            var request = new RestRequest("oauth/access_token" + "?client_id=" + this._ApplicationId + "&client_secret=" + this._applicationSecret + "&code=" + code + "&redirect_uri=http:%2F%2Flocalhost:5176%2F", Method.GET);
-
-            var data = client.Execute(request);
-
-            string accessToken = data.Content.Split('=')[1];
-
-            return accessToken;
-        }
     }
 }

@@ -2,6 +2,7 @@
 using IBM.WatsonDeveloperCloud.NaturalLanguageUnderstanding.v1.Model;
 using IBM.WatsonDeveloperCloud.Util;
 
+
 namespace InteliMotions.Analyze.Facebook.Watson
 {
     public class Connect
@@ -32,7 +33,8 @@ namespace InteliMotions.Analyze.Facebook.Watson
                         Sentiment = true,
                         Emotion = true
                     }
-                }
+                },
+                Language = "pt"
             };
 
             var result = _naturalLanguageUnderstandingService.Analyze(parameters);
