@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteliMotions.Analyze.Faceb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteliMotions.Analyze.ConsoleApp", "InteliMotions.Analyze.ConsoleApp\InteliMotions.Analyze.ConsoleApp.csproj", "{D7B0C438-2605-48C5-AD40-548BE6A5AB3F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteliMotions.Analyze.Facebook.Watson", "InteliMotions.Analyze.Facebook.Watson\InteliMotions.Analyze.Facebook.Watson.csproj", "{F332B80A-11FC-400B-937F-B9F457307B2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D7B0C438-2605-48C5-AD40-548BE6A5AB3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7B0C438-2605-48C5-AD40-548BE6A5AB3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7B0C438-2605-48C5-AD40-548BE6A5AB3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F332B80A-11FC-400B-937F-B9F457307B2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F332B80A-11FC-400B-937F-B9F457307B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F332B80A-11FC-400B-937F-B9F457307B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F332B80A-11FC-400B-937F-B9F457307B2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
