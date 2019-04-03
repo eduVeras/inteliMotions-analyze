@@ -11,13 +11,11 @@ namespace InteliMotions.Analyze.Facebook
 
         private readonly string _accessToken = "EAAMaVWgCZAXMBAF39N1UdgBAdlqhOmkR2VUmVEyZCElkZASARRLthFwxbzW5siLXel5agZBZBYex6XSAR5K6b4ha2CyRyw0eTlw1LoLGbZClLD83H0aYKkFcb2B0Ssq7QRi2fwZB8zJucdFaLy50grrXIdS8zZB2edE4C5yI5VtnxVgY82J3t2AikLiicrutrmgYwCUXwwPUdBOX8SeTN8OIWctACl1MBO7ZBFd5ZCdoZBHLQZDZD";
 
-        private readonly FacebookClient _facebookClient;
         private readonly FacebookService _facebookService;
 
         public Connect(string accessToken, string applicationSecret, string applicationApi)
         {
-            _facebookClient = new FacebookClient();
-            _facebookService = new FacebookService(_facebookClient, accessToken);
+            _facebookService = new FacebookService(accessToken);
         }
         
         public FacebookPosts GetPosts()

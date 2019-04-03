@@ -16,10 +16,10 @@ namespace InteliMotions.Analyze.Facebook.Service
         private readonly IFacebookClient _facebookClient;
         private readonly string _accessToken;
 
-        public FacebookService(IFacebookClient facebookClient, string accessToken)
+        public FacebookService(string accessToken)
         {
             _accessToken = accessToken;
-            _facebookClient = facebookClient;
+            _facebookClient = new FacebookClient();
         }
         
         public async Task<FacebookPosts> GetPost()
