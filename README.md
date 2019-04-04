@@ -7,3 +7,6 @@ Este projeto tem o intuito de realizar uma verificação em todos os comentarios
 - Api Facebook
 - Watson Natural Language Understanding
 - C#
+
+
+[![codecov](https://codecov.io/gh/eduVeras/InteliMotions.Analyze/branch/master/graph/badge.svg)](https://codecov.io/gh/eduVeras/InteliMotions.Analyze)
