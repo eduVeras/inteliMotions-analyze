@@ -26,13 +26,7 @@ namespace InteliMotions.Analyze.Facebook.Service
         {
             var result = await _facebookClient.GetAsync<FacebookPosts>(
                 _accessToken, "me/posts");
-
-            if (result == null)
-            {
-                return null;
-            }
             
-
             return result;
         }
 
@@ -40,12 +34,7 @@ namespace InteliMotions.Analyze.Facebook.Service
         {
             var result = await _facebookClient.GetAsync<FacebookMessages>(
                 _accessToken, $"{postId}/comments");
-
-            if (result == null)
-            {
-                return null;
-            }
-
+            
             return result;
         }
 
