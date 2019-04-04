@@ -1,2 +1,6 @@
 language: csharp
 solution: InteliMotions.Analyze.sln
+
+
+export CODECOV_TOKEN="token"
+bash <(curl -s https://codecov.io/gh/eduVeras/InteliMotions.Analyze)
