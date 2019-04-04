@@ -4,3 +4,6 @@ solution: InteliMotions.Analyze.sln
 
 after_success:
     - codecov
+    
+after_script:
+        - bash <(curl -s https://codecov.io/bash)
